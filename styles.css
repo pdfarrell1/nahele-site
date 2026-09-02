@@ -303,6 +303,21 @@ footer li a:hover{color:var(--cream)}
   .modal-body{padding:30px 26px}
   .form-card{padding:30px 26px}
 }
+/* ---------- markets ---------- */
+.market-list{max-width:820px;margin:0 auto;display:grid;gap:14px}
+.market-row{display:flex;align-items:center;gap:22px;background:#fdfbf4;border:1px solid rgba(36,71,47,.1);border-radius:16px;padding:18px 24px;transition:.25s}
+.market-row:hover{transform:translateY(-3px);box-shadow:0 18px 34px -20px rgba(19,43,30,.35)}
+.m-date{flex:none;width:64px;height:64px;border-radius:14px;background:var(--forest-700);color:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.m-day{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600}
+.m-mon{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);margin-top:4px}
+.m-info{margin-right:auto}
+.m-info h3{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--forest-900)}
+.m-info p{font-size:13.5px;color:var(--muted);font-weight:300;margin-top:2px}
+.m-note{flex:none;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(177,138,78,.35);padding:7px 14px;border-radius:999px}
+@media(max-width:600px){
+  .market-row{flex-wrap:wrap;gap:14px;padding:16px 18px}
+  .m-note{margin-left:78px}
+}
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none}
