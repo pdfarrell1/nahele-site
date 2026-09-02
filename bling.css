@@ -1,0 +1,90 @@
+/* ============================================================
+   ✨ BLING PACK — gold foil, sheens, glows, sparkles
+   Loads after styles.css. Each block is labeled — delete a
+   block to turn off just that effect.
+   ============================================================ */
+
+/* ---------- foil gradients (dark sections get brighter gold) ---------- */
+:root{ --foil-grad:linear-gradient(105deg,#7c5e17 0%,#b8912e 22%,#f0d87c 45%,#b8912e 65%,#7c5e17 88%); }
+.hero,#story,.cta-band,.page-banner,#contact,footer{
+  --foil-grad:linear-gradient(105deg,#dfb85c 0%,#f6e29a 30%,#fff6d8 50%,#f6e29a 70%,#dfb85c 90%);
+}
+@keyframes foil{to{background-position:250% center}}
+@keyframes twinkle{0%,100%{opacity:.5;transform:scale(.8) rotate(0deg)}50%{opacity:1;transform:scale(1.2) rotate(18deg)}}
+
+/* ---------- 1 · GOLD FOIL TEXT — headlines, wordmark, prices ---------- */
+h1,h2,.eyebrow,.brand-script,.story-sign,.booth-chip,.price,.modal-price,.step-num{
+  background-image:var(--foil-grad);
+  background-size:250% auto;
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+  animation:foil 8s linear infinite;
+}
+
+/* ---------- 2 · ANNOUNCE BAR — shimmering green + twinkling ✿ ---------- */
+.announce{
+  background:linear-gradient(90deg,#12291c,#1f4530 30%,#2d5e41 50%,#1f4530 70%,#12291c);
+  background-size:200% auto;animation:foil 9s linear infinite;
+}
+.announce i{display:inline-block;animation:twinkle 2.2s ease-in-out infinite;text-shadow:0 0 10px rgba(246,226,154,.9)}
+.announce i + i{animation-delay:1.1s}
+
+/* ---------- 3 · BUTTON SHEENS — idle shimmer on gold, sweep on hover ---------- */
+.btn{position:relative;overflow:hidden}
+.btn::after{content:'';position:absolute;top:-12%;bottom:-12%;left:-45%;width:38%;
+  background:linear-gradient(105deg,transparent,rgba(255,255,255,.65),transparent);
+  transform:skewX(-22deg);pointer-events:none}
+.btn:hover::after{animation:sheen .9s ease}
+.btn-gold::after{animation:sheen 3.6s ease-in-out infinite}
+@keyframes sheen{from{left:-45%}to{left:130%}}
+
+/* ---------- 4 · GOLD RIM — rotating foil border on cards & modal ---------- */
+@property --bling-a{syntax:'<angle>';inherits:false;initial-value:0deg}
+.card,.modal-card{position:relative}
+.card::before,.modal-card::after{
+  content:'';position:absolute;inset:0;border-radius:inherit;padding:1.5px;z-index:2;
+  background:conic-gradient(from var(--bling-a),#caa53d,#f7e7a8 25%,#8a6a1f 50%,#f7e7a8 75%,#caa53d);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+          mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+          mask-composite:exclude;
+  animation:border-spin 7s linear infinite;pointer-events:none;
+}
+@keyframes border-spin{to{--bling-a:360deg}}
+.card:hover{box-shadow:0 30px 60px -24px rgba(177,138,78,.6),0 0 22px rgba(212,175,55,.4)}
+
+/* ---------- 5 · TWINKLING ACCENTS ---------- */
+.sec-head .eyebrow::before,.sec-head .eyebrow::after{
+  content:'✦';display:inline-block;margin:0 .55em;vertical-align:middle;
+  font-size:.42em;color:#d4af37;-webkit-text-fill-color:#d4af37;
+  animation:twinkle 2.6s ease-in-out infinite;
+}
+.sec-head .eyebrow::after{animation-delay:1.3s}
+.marquee-track i{text-shadow:0 0 8px rgba(212,175,55,.85)}
+
+/* ---------- 6 · GLOWING DISPLAY PAD (hero & story art frames) ---------- */
+.pad{animation:pad-glow 5s ease-in-out infinite}
+@keyframes pad-glow{
+  0%,100%{box-shadow:0 40px 80px -30px rgba(5,18,10,.6),inset 0 0 0 1px rgba(120,98,58,.15),0 0 30px rgba(212,175,55,.25)}
+  50%{box-shadow:0 40px 80px -30px rgba(5,18,10,.6),inset 0 0 0 1px rgba(120,98,58,.15),0 0 55px rgba(212,175,55,.5)}
+}
+
+/* ---------- 7 · PULSING BACK-TO-TOP RING ---------- */
+.to-top.show{animation:pulse-ring 2.6s ease-out infinite}
+@keyframes pulse-ring{
+  0%{box-shadow:0 14px 26px -10px rgba(19,43,30,.55),0 0 0 0 rgba(212,175,55,.65)}
+  70%{box-shadow:0 14px 26px -10px rgba(19,43,30,.55),0 0 0 14px rgba(212,175,55,0)}
+  100%{box-shadow:0 14px 26px -10px rgba(19,43,30,.55),0 0 0 0 rgba(212,175,55,0)}
+}
+
+/* ---------- 8 · SPARKLE CANVAS + SCROLL BAR (created by bling.js) ---------- */
+#bling-canvas{position:fixed;inset:0;z-index:6;pointer-events:none}
+#bling-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;
+  background:linear-gradient(90deg,#8a6a1f,#d4af37,#f9e08a,#d4af37,#8a6a1f);
+  background-size:200% auto;animation:foil 4s linear infinite;
+  box-shadow:0 0 8px rgba(212,175,55,.8)}
+
+/* ---------- small screens ---------- */
+@media(max-width:600px){
+  .modal-card::after{display:none}
+}
