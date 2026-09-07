@@ -323,3 +323,5 @@ footer li a:hover{color:var(--cream)}
   .reveal{opacity:1;transform:none}
   html{scroll-behavior:auto}
 }
+.brand-logo{height:52px;width:auto;display:block}
+@media(max-width:600px){.brand-logo{height:40px}}
