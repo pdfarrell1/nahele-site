@@ -2,11 +2,11 @@
    Nāhele Hawai‘i — shared stylesheet
    ============================================================ */
 :root{
-  --forest-900:#132b1e;
-  --forest-800:#1b3527;
-  --forest-700:#24472f;
-  --forest-600:#2f5a3e;
-  --forest-500:#3d704f;
+  --forest-900:#0a1f12;
+  --forest-800:#0f2a18;
+  --forest-700:#16371f;
+  --forest-600:#1e4729;
+  --forest-500:#2b5c37;
   --cream:#faf6ec;
   --cream-2:#f3ecda;
   --sand:#e9dfc8;
@@ -226,7 +226,7 @@ h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(32px,4
 .faq-a a{color:var(--forest-700);text-decoration:underline;text-underline-offset:3px}
 
 /* ---------- footer ---------- */
-footer{background:#0f2318;border-top:1px solid rgba(250,246,236,.08);color:#b7c8b5;padding:66px 0 30px}
+footer{background:var(--forest-900);;border-top:1px solid rgba(250,246,236,.08);color:#b7c8b5;padding:66px 0 30px}
 .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1.1fr;gap:46px}
 .foot-brand .brand-script{font-size:46px;color:var(--cream)}
 .foot-brand p{margin-top:12px;font-size:14px;font-weight:300;max-width:36ch}
