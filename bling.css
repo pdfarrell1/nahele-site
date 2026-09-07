@@ -57,12 +57,12 @@ h1,h2,.eyebrow,.brand-script,.story-sign,.booth-chip,.price,.modal-price,.step-n
 .card:hover{box-shadow:0 30px 60px -24px rgba(177,138,78,.6),0 0 22px rgba(212,175,55,.4)}
 
 /* ---------- 5 · TWINKLING ACCENTS ---------- */
-.sec-head .eyebrow::before,.sec-head .eyebrow::after{
+/* .sec-head .eyebrow::before,.sec-head .eyebrow::after{
   content:'✦';display:inline-block;margin:0 .55em;vertical-align:middle;
   font-size:.42em;color:#d4af37;-webkit-text-fill-color:#d4af37;
   animation:twinkle 2.6s ease-in-out infinite;
 }
-.sec-head .eyebrow::after{animation-delay:1.3s}
+.sec-head .eyebrow::after{animation-delay:1.3s} */
 .marquee-track i{text-shadow:0 0 8px rgba(212,175,55,.85)}
 
 /* ---------- 6 · GLOWING DISPLAY PAD (hero & story art frames) ---------- */
