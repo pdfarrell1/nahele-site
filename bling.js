@@ -8,8 +8,8 @@
    ============================================================ */
 (function(){
 'use strict';
-var SPARKLE_COUNT = 70;    // floating sparkles on screen (try 30 for subtle)
-var CURSOR_TRAIL  = true;  // false = no sparkles following the mouse
+var SPARKLE_COUNT = 0;    // floating sparkles on screen (try 30 for subtle)
+var CURSOR_TRAIL  = false;  // false = no sparkles following the mouse
 var SCROLL_BAR    = true;  // false = remove the gold scroll-progress bar
 
 var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
