@@ -23,7 +23,10 @@ h1,h2,.eyebrow,.brand-script,.story-sign,.booth-chip,.price,.modal-price,.step-n
 
 /* ---------- 2 · ANNOUNCE BAR — shimmering green + twinkling ✿ ---------- */
 .announce{
-  background:linear-gradient(90deg,#12291c,#1f4530 30%,#2d5e41 50%,#1f4530 70%,#12291c);
+  .announce{
+  background:linear-gradient(90deg,var(--forest-900),var(--forest-700) 30%,var(--forest-600) 50%,var(--forest-700) 70%,var(--forest-900));
+  background-size:200% auto;animation:foil 9s linear infinite;
+}
   background-size:200% auto;animation:foil 9s linear infinite;
 }
 .announce i{display:inline-block;animation:twinkle 2.2s ease-in-out infinite;text-shadow:0 0 10px rgba(246,226,154,.9)}
